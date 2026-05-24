@@ -4,7 +4,7 @@ class Stack:
     
     def __init__(self):
         self.pages = []
-        self.previousPages = []
+        self.future_pages = []
         
     def isEmpty(self):
         return self.pages == []
@@ -23,7 +23,7 @@ class Stack:
     
     def accessPage(self, page):
         previous = self.pop()
-        self.previousPages.append(previous)
+        self.future_pages.append(previous)
         return self.push(page)
     
     def returnPage(self):
