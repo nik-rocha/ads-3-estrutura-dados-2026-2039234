@@ -69,11 +69,11 @@ def busca_binaria(lista, alvo, inicio, fim):
     if lista[meio] == alvo:
         return meio
     
-    if lista[meio] < alvo:
-        return busca_binaria(lista, alvo, inicio, meio + 1)
+    if alvo < lista[meio]:
+        return busca_binaria(lista, alvo, inicio, meio - 1)
     
     return busca_binaria(lista, alvo, meio + 1, fim)
 
 notas = [4, 6.7, 8, 9.5, 10]
-resultado = busca_binaria(notas, 9.5, notas[0], notas[-1])
+resultado = busca_binaria(notas, 9.5, 0, len(notas)-1)
 print("Índice encontrado:", resultado)
